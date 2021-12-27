@@ -1,0 +1,40 @@
+.row{
+    margin: 0px;
+}
+
+.padre{
+    height: 91.3vh;
+}
+
+.fondo, .formulario{
+    border-radius: 3%;
+    height: 60vh;
+}
+
+.fondo{
+    border-radius: 50%;
+    animation: movimiento 2.5s linear infinite;
+}
+
+.formulario{
+    background-color:#22AAA1;
+    padding: 30px;
+}
+
+#crear{
+    margin-right: 35px;
+}
+
+.form-floating{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.enlace{
+    color: white;
+    text-decoration: none;
+}
+
+.enlace:hover{
+    color: black;
+}

@@ -1,0 +1,102 @@
+.opciones{
+    height: 12vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.row{
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu{
+    height: 100%;
+}
+
+#mensajes{
+    height: 39vh;
+    overflow: scroll;
+    margin-bottom: 15px;
+    padding: 0px;
+}
+
+p{
+    margin: 5px;
+}
+
+.screen{
+    margin-right: 6px;
+    margin-bottom: 6px;
+    width: 19%;
+    padding: 0px;
+    background-color: rgba(255, 255, 255, 0.548);
+}
+
+h4{
+    text-align:start;
+}
+
+.contenedor {
+    height: 60vh;
+    background-color: white;
+    border-radius: 5%;
+}
+
+.screen, video{
+    border-radius: 2%;
+}
+
+.pantallas, .panel {
+    height: 79.3vh;
+}
+
+.pantallas{
+    overflow: scroll;
+    padding-top: 12px;
+    padding-left: 40px;
+}
+
+.opcion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    background-color: aquamarine;
+    margin: 5px;
+    border-radius: 10%;
+    border:none;
+}
+
+.opcion:hover{
+    background-color: white;
+}
+
+#cerrar{
+    border-style: none;
+    background-color: transparent;
+}
+
+#cerrar:hover{
+    color: red;
+}
+
+#participantes{
+    height: 46vh;
+}
+
+.area{
+    height: 5vh;
+    padding: 0px;
+    margin: 0px;
+}
+
+.subarea{
+    height: 130%;
+}
+
+.encabezado{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
