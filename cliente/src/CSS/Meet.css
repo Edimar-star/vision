@@ -1,5 +1,10 @@
 .opciones{
-    height: 12vh;
+    height: 13vh;
+}
+
+.opcion, .screen, .contenedor {
+    background: rgba(50, 48, 67);
+    border-radius: 2%;
 }
 
 ::-webkit-scrollbar {
@@ -16,7 +21,7 @@
 }
 
 #mensajes{
-    height: 39vh;
+    height: 70vh;
     overflow: scroll;
     margin-bottom: 15px;
     padding: 0px;
@@ -29,57 +34,85 @@ p{
 .screen{
     margin-right: 6px;
     margin-bottom: 6px;
-    width: 19%;
+    width: 100%;
     padding: 0px;
-    background-color: rgba(255, 255, 255, 0.548);
+    color: white;
 }
 
 h4{
-    text-align:start;
+    text-align: start;
+    color: white;
+}
+
+.card-img-overlay{
+    display: flex;
+    align-items: end;
 }
 
 .contenedor {
-    height: 60vh;
-    background-color: white;
-    border-radius: 5%;
+    height: 95%;
+    padding: 12px;
 }
 
-.screen, video{
-    border-radius: 2%;
+#videoShare{
+    background-color: black;
 }
 
-.pantallas, .panel {
-    height: 79.3vh;
+.panel{
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .pantallas{
     overflow: scroll;
-    padding-top: 12px;
-    padding-left: 40px;
+    height: 80vh;
+}
+
+.content{
+    margin-bottom: 12px;
+}
+
+.pantallas{
+    padding: 20px;
 }
 
 .opcion{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50%;
-    background-color: aquamarine;
+    height: 6vh;
+    color: white;
     margin: 5px;
-    border-radius: 10%;
-    border:none;
+    border-radius: 6%;
+    width: 8vh;
+    border: 1px solid rgba(50, 48, 67);
+}
+
+h6{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 .opcion:hover{
-    background-color: white;
+    background: white;
+    color: black;
 }
 
 #cerrar{
     border-style: none;
-    background-color: transparent;
+    height: 68%;
+    background: transparent;
+    width: 12%;
+    color: rgba(82, 82, 112);
+}
+
+hr{
+    background-color: rgba(82, 82, 112);
 }
 
 #cerrar:hover{
-    color: red;
+    color: white;
 }
 
 #participantes{
@@ -87,16 +120,43 @@ h4{
 }
 
 .area{
-    height: 5vh;
-    padding: 0px;
-    margin: 0px;
-}
-
-.subarea{
-    height: 130%;
+    height: 11vh;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border-radius: 2%;
 }
 
 .encabezado{
-    margin-top: 15px;
-    margin-bottom: 10px;
+    height: 8vh;
+}
+
+.subarea{
+    height: 60%;
+    background: transparent;
+    border-color: rgb(129, 129, 129);
+    color: white;
+}
+
+.subarea:nth-child(1):hover, .subarea:nth-child(1):focus{
+    box-shadow: none;
+    background: transparent;
+    border-color: rgb(129, 129, 129);
+    color: white;
+}
+
+#join{
+    margin-left: 20px;
+    height: 60%;
+    border-radius: 2%;
+    background-color: white;
+    transition: width 1s linear 1s;
+}
+
+.join {
+    width: 0%;
+}
+
+.out{
+    width: 150%;
 }

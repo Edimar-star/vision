@@ -2,7 +2,6 @@ import { v1 as uuid } from "uuid";
 import '../CSS/CreateRoom.css';
 import img from '../imagenes/Icon.png';
 import fondo from '../imagenes/promo3.png';
-import Navegacion from '../components/navegacion';
 import swal from 'sweetalert2';
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
@@ -64,8 +63,7 @@ const CreateRoom = () => {
     }, [showRoom === false]);
 
     return (
-        <>
-            <Navegacion></Navegacion>
+        <div>
             {!showRoom ? (
                 <div className="App">
                     <div className="row padre justify-content-around align-items-center">
@@ -74,7 +72,7 @@ const CreateRoom = () => {
                                 <img className="col-md-2" src={img} />
                             </div>
                             <div className="row">
-                                <h3 style={{ textAlign: "center", marginBoottom: "5px" }} className="col-md-12">Crea o unete a una sala</h3>
+                                <h3 style={{ textAlign: "center", marginBoottom: "5px", color: "white" }} className="col-md-12">Crea o unete a una sala</h3>
                             </div>
                             <div className="row">
                                 <div className="form-floating mb-3">
@@ -109,7 +107,7 @@ const CreateRoom = () => {
             ) : (
                 <Room socket={socket} username={username} roomID={roomID}></Room>
             )}
-        </>
+        </div>
     );
 };
 

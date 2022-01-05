@@ -12,6 +12,8 @@ var socketToRoom = {};
 
 io.on('connection', socket => {
 
+    //Entrando y creando sala
+
     socket.on("join room", (data) => {
         socket.join(data.roomID);
 
@@ -28,6 +30,18 @@ io.on('connection', socket => {
         socket.emit("all users", usersInThisRoom);
     });
 
+    //Audio y video
+
+    socket.on("video", data => {
+        io.to(data.id).emit("video", { condicion: data.condicion, signal: data.signal });
+    })
+
+    socket.on("audio", data => {
+        io.to(data.id).emit("video", { condicion: data.condicion, signal: data.signal });
+    })
+
+    //Entrar a una sala
+
     socket.on("into", (room) => {
         var existeReunion = false;
         for (let [id, socket] of io.of("/").sockets) {
@@ -41,17 +55,51 @@ io.on('connection', socket => {
         socket.emit("existe-room", existeReunion);
     })
 
+    //conexion entre pares
+
     socket.on("sending signal", payload => {
-        io.to(payload.userToSignal).emit('user joined', { signal: payload.signal, callerID: payload.callerID, username: payload.username });
+        io.to(payload.userToSignal).emit('user joined', { 
+            signal: payload.signal, 
+            callerID: payload.callerID, 
+            username: payload.username, 
+        });
     });
 
     socket.on("returning signal", payload => {
-        io.to(payload.callerID).emit('receiving returned signal', { signal: payload.signal, id: socket.id });
+        io.to(payload.callerID).emit('receiving returned signal', { 
+            signal: payload.signal, 
+            id: socket.id, 
+        });
     });
+
+    //Compartiendo pantalla
+
+    socket.on("sending signalScreen", payload => {
+        io.to(payload.userToSignal).emit('new screen', { 
+            signal: payload.signal, 
+            callerID: payload.callerID, 
+            username: payload.username, 
+        });
+    });
+
+    socket.on("returning signalScreen", payload => {
+        io.to(payload.callerID).emit('receiving new screen', { 
+            signal: payload.signal, 
+            id: socket.id, 
+        });
+    });
+
+    socket.on("stop", id => {
+        io.to(id).emit("stop");
+    })
+
+    //Mensajes
 
     socket.on("send_message", (data) => {
         socket.to(data.room).emit("receive_message", data);
     })
+
+    //usuario desconectado
 
     socket.on('disconnect', () => {
         const roomID = socketToRoom[socket.id];
